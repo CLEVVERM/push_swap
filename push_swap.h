@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/06 13:20:17 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/06 18:07:24 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ typedef struct s_insides
 };
 
 t_node new_one(int data);
+void free_group(t_group *group);
+void add_bottom(t_group *group, t_node *node);
+void free_both(t_group *a, t_group *b);
 void sa(t_group *a);
 void sb(t_group *b);
 void pa(t_group *a,t_group *b);
