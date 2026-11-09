@@ -6,7 +6,11 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:15 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/03 14:36:16 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/09 18:28:23 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+int str_to_nmb(int *numb, char str)
+{
+	
+}

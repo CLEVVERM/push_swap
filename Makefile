@@ -6,33 +6,38 @@
 #    By: msotnych <msotnych@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/23 17:33:59 by msotnych      #+#    #+#                  #
-#    Updated: 2026/11/05 14:23:00 by msotnych      ########   odam.nl          #
+#    Updated: 2026/11/09 18:22:24 by msotnych      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 CC = cc
 CFLAG = -Wall -Wextra -Werror
-AR = ar rcs
 RM = rm -f
 FT_PRINTF = ft_printf/libftprintf.a
 LIBFT = Libft/libft.a
-SRC = ft_printf.c ft_printf_char.c ft_printf_numb.c \
+SRC = push_swap.c push_swap_utils.c main.c \
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 %.o: %.c
 	$(CC) $(CFLAG) -c $< -o $@  
-	
+$(LIBFT):
+	make -C Libft
+$(FT_PRINTF):
+	make -C ft_printf
 $(NAME): $(OBJ) $(FT_PRINTF) $(LIBFT)
-	$(AR) $(NAME) $(OBJ)
+	$(CC) $(CFLAG) $(OBJ) $(FT_PRINTF) $(LIBFT) -o $(NAME)
 
 clean: 
 	$(RM) $(OBJ) 
+	make -C ft_printf clean
+	make -C Libft clean
 fclean: 
-	$(RM) $(OBJ) $(NAME)
-
+	$(RM) $(OBJ) $(NAME) $(FT_PRINTF) $(LIBFT)
+	make -C ft_printf fclean
+	make -C Libft fclean
 re: fclean all
 
 .PHONY: clean fclean all re
