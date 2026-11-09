@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 17:54:29 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/06 18:06:52 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/09 13:32:36 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,9 @@ void free_both(t_group *a, t_group *b)
 	free_group (&b);
 	write(2, "Error", 5);
 	exit(1);
+}
+
+int main(void)
+{
+	
 }
