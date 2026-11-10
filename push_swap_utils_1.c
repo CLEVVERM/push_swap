@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap_utils.c                                  :+:    :+:            */
+/*   push_swap_utils_1.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 17:54:29 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/09 16:56:55 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/10 19:14:55 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ void free_group(t_group *group)
 
 	if (!group || group == NULL)
 		return ;
-	curr = group -> top; 
+	curr = group->top; 
 	while (curr != NULL)
 	{
 		temp = curr -> next;
 		free(curr);
 		curr = temp;
 	}
-	group -> size = 0;
-	group -> top = NULL;
-	group -> bottom = NULL;
+	group->size = 0;
+	group->top = NULL;
+	group->bottom = NULL;
 }
 
 void add_bottom(t_group *group, t_node *node)
@@ -69,3 +69,16 @@ void free_both(t_group *a, t_group *b)
 	exit(1);
 }
 
+void swap(t_group *group)
+{
+	t_node *temp;
+	
+	if (group == NULL || group->size < 2)
+		return ;
+	temp = group->top;
+	group->top = group->top->next;
+	group->top->next = temp;
+	temp = group->top->index;
+	group->top->index = group->top->next->index;
+	group->top->next->index = temp;
+}

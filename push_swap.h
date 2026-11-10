@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/09 18:28:35 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/10 17:34:22 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,23 @@ typedef struct s_group
 	t_node *bottom;
 }	t_group;
 
-// typedef struct s_insides
-// {
+typedef struct s_for_pars
+{
+	t_group a;
+	t_group b;
+	double disorder;
+	int sa;
+	int sb;
+	int pa;
+	int pb;
+	int ra;
+	int rb;
+	int rr;
+	int rra;
+	int rrb;
+	int rrr;
 	
-// };
+}	t_for_pars;
 
 
 

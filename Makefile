@@ -6,7 +6,7 @@
 #    By: msotnych <msotnych@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/23 17:33:59 by msotnych      #+#    #+#                  #
-#    Updated: 2026/11/09 18:22:24 by msotnych      ########   odam.nl          #
+#    Updated: 2026/11/10 17:21:09 by msotnych      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAG = -Wall -Wextra -Werror
 RM = rm -f
 FT_PRINTF = ft_printf/libftprintf.a
 LIBFT = Libft/libft.a
-SRC = push_swap.c push_swap_utils.c main.c \
+SRC = push_swap.c push_swap_utils_1.c push_swap_utils_2.c main.c \
 
 OBJ = $(SRC:.c=.o)
 
