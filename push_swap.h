@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/10 17:34:22 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/11 18:22:22 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,29 @@ typedef struct s_group
 	t_node *bottom;
 }	t_group;
 
-typedef struct s_for_pars
+typedef struct s_data
 {
 	t_group a;
 	t_group b;
 	double disorder;
-	int sa;
-	int sb;
-	int pa;
-	int pb;
-	int ra;
-	int rb;
-	int rr;
-	int rra;
-	int rrb;
-	int rrr;
+	int sa_c;
+	int sb_c;
+	int ss_c;
+	int pa_c;
+	int pb_c;
+	int ra_c;
+	int rb_c;
+	int rr_c;
+	int rra_c;
+	int rrb_c;
+	int rrr_c;
 	
-}	t_for_pars;
+}	t_data;
 
 
 
 
-int str_to_nmb(int *numb, char str);
+int str_to_num(int *numb, char *str);
 t_node *new_one(int data);
 void free_group(t_group *group);
 void add_bottom(t_group *group, t_node *node);
@@ -72,4 +73,10 @@ void rr(t_group *a,t_group *b);
 void rra(t_group *a);
 void rrb(t_group *b);
 void rrr(t_group *a,t_group *b);
+void swap(t_group *group);
+void rotate(t_group *group);
+void push_to_other(t_group *a, t_group *b);
+void rrotate(t_group *group);
+double better_dissorder(t_group *a);
+
 #endif

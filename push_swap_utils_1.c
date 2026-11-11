@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 17:54:29 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/10 19:14:55 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/11 15:49:52 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ void free_both(t_group *a, t_group *b)
 
 void swap(t_group *group)
 {
-	t_node *temp;
+	int temp;
 	
 	if (group == NULL || group->size < 2)
 		return ;
-	temp = group->top;
-	group->top = group->top->next;
-	group->top->next = temp;
+	temp = group->top->data;
+	group->top->data = group->top->next->data;
+	group->top->next->data = temp;
 	temp = group->top->index;
 	group->top->index = group->top->next->index;
 	group->top->next->index = temp;

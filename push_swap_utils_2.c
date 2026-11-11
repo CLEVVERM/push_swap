@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/10 14:59:12 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/10 19:39:35 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/11 15:51:15 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void push_to_other(t_group *a, t_group *b)
 	temp->next = b->top;
 	if (b->top != NULL)
 		b->top->prew = temp;
-	if (b->top = NULL)
+	if (b->top == NULL)
 		b->bottom = temp;
 	b->top = temp;
 	b->size++;
