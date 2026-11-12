@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/11 18:22:22 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/12 18:14:55 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,15 @@ typedef struct s_data
 	int rra_c;
 	int rrb_c;
 	int rrr_c;
+	int strategy;
+	int bench;
 	
 }	t_data;
 
-
-
-
+int add_num(char *str, t_data *data);
+int compere_flags(char *flag, t_data *data);
+int check_duplicates(t_group *group);
+int pars(int argc, char *argv[], t_data *data);
 int str_to_num(int *numb, char *str);
 t_node *new_one(int data);
 void free_group(t_group *group);

@@ -6,7 +6,7 @@
 #    By: msotnych <msotnych@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/23 17:33:59 by msotnych      #+#    #+#                  #
-#    Updated: 2026/11/11 16:01:06 by msotnych      ########   odam.nl          #
+#    Updated: 2026/11/12 17:58:39 by msotnych      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM = rm -f
 FT_PRINTF = ft_printf/libftprintf.a
 LIBFT = Libft/libft.a
 SRC = push_swap.c push_swap_utils_1.c push_swap_utils_2.c main.c better_disorder.c operations1.c \
-		operations2.c operations3.c \
+		operations2.c operations3.c pars.c \
 
 
 		
