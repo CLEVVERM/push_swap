@@ -6,16 +6,24 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/12 18:46:42 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 13:23:21 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-static int group()
+void print_group(t_group *group)
 {
-	
+	t_node *curr;
+	if (!group || group == NULL)
+		return ;
+	curr = group->top;
+	while (curr != NULL)
+	{
+		ft_printf("%d ", curr->data);
+		curr = curr->next;
+	}
+	ft_printf("%c", '\n');
 }
 
 int main(int argc, char *argv[])
@@ -30,6 +38,8 @@ int main(int argc, char *argv[])
 		free_both(&data.a, &data.b);
 	ft_printf("size: %d\n", data.a.size);
 	ft_printf("strategy:%d\n", data.strategy);
+	print_group(&data.a);
+	print_group(&data.b);
 	free_group(&data.a);
 	free_group(&data.b);
 	return(1);

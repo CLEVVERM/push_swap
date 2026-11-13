@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/12 18:14:55 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 13:24:13 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_data
 	
 }	t_data;
 
+void print_group(t_group *group);
 int add_num(char *str, t_data *data);
 int compere_flags(char *flag, t_data *data);
 int check_duplicates(t_group *group);
