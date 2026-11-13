@@ -6,13 +6,13 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/10 14:56:09 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/11 16:38:25 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 17:47:41 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sa(t_group *a)
+void	sa(t_group *a)
 {
 	if (!a || a->size < 2)
 		return ;
@@ -20,7 +20,7 @@ void sa(t_group *a)
 	write(1, "sa\n", 3);
 }
 
-void sb(t_group *b)
+void	sb(t_group *b)
 {
 	if (!b || b->size < 2)
 		return ;
@@ -28,7 +28,7 @@ void sb(t_group *b)
 	write(1, "sb\n", 3);
 }
 
-void ss(t_group *a, t_group *b)
+void	ss(t_group *a, t_group *b)
 {
 	if (!a || !b || a->size < 2 || b->size < 2)
 		return ;
@@ -37,7 +37,7 @@ void ss(t_group *a, t_group *b)
 	write(1, "ss\n", 3);
 }
 
-void pa(t_group *a, t_group *b)
+void	pa(t_group *a, t_group *b)
 {
 	if (!a || !b || b->size < 1)
 		return ;
@@ -45,7 +45,7 @@ void pa(t_group *a, t_group *b)
 	write(1, "pa\n", 3);
 }
 
-void pb(t_group *a, t_group *b)
+void	pb(t_group *a, t_group *b)
 {
 	if (!a || !b || a->size < 1)
 		return ;

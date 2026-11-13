@@ -6,13 +6,13 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/11 15:37:28 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/11 15:38:46 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 17:47:19 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ra(t_group *a)
+void	ra(t_group *a)
 {
 	if (!a || a->size < 2)
 		return ;
@@ -20,7 +20,7 @@ void ra(t_group *a)
 	write(1, "ra\n", 3);
 }
 
-void rb(t_group *b)
+void	rb(t_group *b)
 {
 	if (!b || b->size < 2)
 		return ;
@@ -28,7 +28,7 @@ void rb(t_group *b)
 	write(1, "rb\n", 3);
 }
 
-void rr(t_group *a, t_group *b)
+void	rr(t_group *a, t_group *b)
 {
 	if (!b || !a || a->size < 2 || b->size < 2)
 		return ;
@@ -37,7 +37,7 @@ void rr(t_group *a, t_group *b)
 	write(1, "rr\n", 3);
 }
 
-void rra(t_group *a)
+void	rra(t_group *a)
 {
 	if (!a || a->size < 2)
 		return ;
@@ -45,7 +45,7 @@ void rra(t_group *a)
 	write(1, "rra\n", 4);
 }
 
-void rrb(t_group *b)
+void	rrb(t_group *b)
 {
 	if (!b || b->size < 2)
 		return ;

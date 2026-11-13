@@ -6,12 +6,11 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:15 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/12 18:43:38 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 13:44:59 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include <stdio.h>
 
 int	str_to_num(int *num, char *str)
 {

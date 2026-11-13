@@ -6,13 +6,13 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/11 15:37:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/11 15:38:37 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 17:47:01 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rrr(t_group *a, t_group *b)
+void	rrr(t_group *a, t_group *b)
 {
 	if (!b || !a || a->size < 2 || b->size < 2)
 		return ;

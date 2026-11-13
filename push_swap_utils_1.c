@@ -6,15 +6,16 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/05 17:54:29 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/11 15:49:52 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 18:12:35 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *new_one(int data)
+t_node	*new_one(int data)
 {
-	t_node *new;
+	t_node	*new;
+
 	new = malloc(sizeof(t_node));
 	if (!new)
 		return (NULL);
@@ -25,14 +26,14 @@ t_node *new_one(int data)
 	return (new);
 }
 
-void free_group(t_group *group)
+void	free_group(t_group *group)
 {
-	t_node *curr;
-	t_node *temp;
+	t_node	*curr;
+	t_node	*temp;
 
 	if (!group || group == NULL)
 		return ;
-	curr = group->top; 
+	curr = group->top;
 	while (curr != NULL)
 	{
 		temp = curr -> next;
@@ -44,7 +45,7 @@ void free_group(t_group *group)
 	group->bottom = NULL;
 }
 
-void add_bottom(t_group *group, t_node *node)
+void	add_bottom(t_group *group, t_node *node)
 {
 	if (!group -> top)
 	{
@@ -58,10 +59,10 @@ void add_bottom(t_group *group, t_node *node)
 		node -> prew = group -> bottom;
 		group -> bottom = node;
 	}
-	group -> size++;	
+	group->size++;
 }
 
-void free_both(t_group *a, t_group *b)
+void	free_both(t_group *a, t_group *b)
 {
 	free_group (a);
 	free_group (b);
@@ -69,10 +70,10 @@ void free_both(t_group *a, t_group *b)
 	exit(1);
 }
 
-void swap(t_group *group)
+void	swap(t_group *group)
 {
-	int temp;
-	
+	int	temp;
+
 	if (group == NULL || group->size < 2)
 		return ;
 	temp = group->top->data;

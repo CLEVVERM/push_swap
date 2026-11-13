@@ -6,15 +6,17 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:23:21 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 17:49:06 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-void print_group(t_group *group)
+void	print_group(t_group *group)
 {
-	t_node *curr;
+	t_node	*curr;
+
 	if (!group || group == NULL)
 		return ;
 	curr = group->top;
@@ -26,9 +28,9 @@ void print_group(t_group *group)
 	ft_printf("%c", '\n');
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_data data;
+	t_data	data;
 
 	ft_bzero(&data, sizeof(t_data));
 	
@@ -40,6 +42,15 @@ int main(int argc, char *argv[])
 	ft_printf("strategy:%d\n", data.strategy);
 	print_group(&data.a);
 	print_group(&data.b);
+	ft_printf("sorted 1=y 0=n: %d\n", sorted(&data.a));
+
+	// po sabjkty nam nado vivodit infy ob oshike i disorder i td v stdrr
+	// toest, nyjno izmenit ft_printf 
+	data.disorder = better_dissorder(&data.a);
+	printf("disorder: %f\n", data.disorder);
+
+
+	
 	free_group(&data.a);
 	free_group(&data.b);
 	return(1);

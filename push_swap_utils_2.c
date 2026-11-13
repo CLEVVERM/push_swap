@@ -6,16 +6,16 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/10 14:59:12 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/11 15:51:15 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/13 18:42:24 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate(t_group *group)
+void	rotate(t_group *group)
 {
-	t_node *temp;
-	
+	t_node	*temp;
+
 	if (group == NULL || group->size < 2)
 		return ;
 	temp = group->top;
@@ -27,11 +27,11 @@ void rotate(t_group *group)
 	group->bottom = temp;
 }
 
-void rrotate(t_group *group)
+void	rrotate(t_group *group)
 {
-	t_node *temp;
+	t_node	*temp;
 
-	if(group == NULL || group->size<2)
+	if (group == NULL || group->size < 2)
 		return ;
 	temp = group->bottom;
 	group->bottom = group->bottom->prew;
@@ -42,9 +42,9 @@ void rrotate(t_group *group)
 	group->top = temp;
 }
 
-void push_to_other(t_group *a, t_group *b)
+void	push_to_other(t_group *a, t_group *b)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (a == NULL || b == NULL || a->size < 1)
 		return ;
@@ -63,4 +63,43 @@ void push_to_other(t_group *a, t_group *b)
 		b->bottom = temp;
 	b->top = temp;
 	b->size++;
+}
+
+int	sorted(t_group *group)
+{
+	t_node	*curr;
+
+	if (!group || !group->top)
+		return (1);
+	curr = group->top;
+	while (curr != NULL || curr->next)
+	{
+		if (curr->data > curr->next->data)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
+}
+
+int index_for_sorting(t_group *group)
+{
+	int index;
+	t_node *curr;
+	t_node *unindext;
+
+	if (!group)
+		return ;
+	curr = group->top;
+	while (curr)
+	{
+		unindext = group->top;
+		while (unindext)
+		{
+			if (unindext->data < curr->data)
+				index++;
+			unindext = unindext->next;
+		}
+		curr->index = index;
+		curr = curr->next;
+	}
 }
