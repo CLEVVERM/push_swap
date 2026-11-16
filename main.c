@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/13 17:49:06 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/16 14:20:33 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ int	main(int argc, char *argv[])
 
 	// po sabjkty nam nado vivodit infy ob oshike i disorder i td v stdrr
 	// toest, nyjno izmenit ft_printf 
+
+
+	//ЗАПУСКАТЬ ТАК: СНАЧАЛА make,  ПОТОМ  ./push_swap 2 34 5 77 6 
 	data.disorder = better_dissorder(&data.a);
 	printf("disorder: %f\n", data.disorder);
 
@@ -55,3 +58,26 @@ int	main(int argc, char *argv[])
 	free_group(&data.b);
 	return(1);
 }
+
+
+//Elsi vdrug zahotim cherez random chsila testitj.
+
+// int	main(void)
+// {
+// 	t_group a;
+// 	int		min;
+// 	int		max;
+// 	int		size;
+
+// 	min = -500;
+// 	max = 500;
+// 	size = 0;
+// 	a.top = NULL;
+// 	a.bottom = NULL;
+// 	a.size = 0;
+// 	srand(time(NULL));
+// 	while(size++ < 100)
+// 	{
+// 		add_bottom (&a, new_one(rand() % (max - min + 1) + min));
+// 	}
+// }
