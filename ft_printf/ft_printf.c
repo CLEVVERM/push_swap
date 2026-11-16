@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/10/28 16:34:30 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/03 18:36:59 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/16 15:16:54 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,4 @@ int	manager(char letter, va_list *args)
 	if (letter == 'a')
 		return (ft_putstr(va_arg(*args, char *)));
 	return (0);
-}
-
-int main(void)
-{
-	printf("%p\n", "*");
-	ft_printf("%p\n", "*");
 }
