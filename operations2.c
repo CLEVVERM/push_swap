@@ -6,49 +6,54 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/11 15:37:28 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/13 17:47:19 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/16 18:25:24 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_group *a)
+void	ra(t_data *data)
 {
-	if (!a || a->size < 2)
+	if (data->a.size < 2)
 		return ;
-	rotate(a);
+	rotate(&data->a);
+	data->ra_c++;
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_group *b)
+void	rb(t_data *data)
 {
-	if (!b || b->size < 2)
+	if (data->b.size < 2)
 		return ;
-	rotate(b);
+	rotate(&data->b);
+	data->rb_c++;
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_group *a, t_group *b)
+void	rr(t_data *data)
 {
-	if (!b || !a || a->size < 2 || b->size < 2)
+	if ( data->a.size < 2 || data->b.size < 2)
 		return ;
-	rotate(a);
-	rotate(b);
+	rotate(&data->a);
+	rotate(&data->b);
+	data->rr_c++;
 	write(1, "rr\n", 3);
 }
 
-void	rra(t_group *a)
+void	rra(t_data *data)
 {
-	if (!a || a->size < 2)
+	if (data->a.size < 2)
 		return ;
-	rrotate(a);
+	rrotate(&data->a);
+	data->rra_c++;
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_group *b)
+void	rrb(t_data *data)
 {
-	if (!b || b->size < 2)
+	if (data->b.size < 2)
 		return ;
-	rrotate(b);
+	rrotate(&data->b);
+	data->rrb_c++;
 	write(1, "rrb\n", 4);
 }

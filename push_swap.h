@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/16 15:18:08 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/16 17:45:19 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_data
 }	t_data;
 
 
-
+t_data	selection_sort(t_data data);
 void	index_for_sorting(t_group *group);
 int		sorted(t_group *group);
 void	print_group(t_group *group);
@@ -69,16 +69,17 @@ t_node	*new_one(int data);
 void	free_group(t_group *group);
 void	add_bottom(t_group *group, t_node *node);
 void	free_both(t_group *a, t_group *b);
-void	sa(t_group *a);
-void	sb(t_group *b);
-void	pa(t_group *a, t_group *b);
-void	pb(t_group *a, t_group *b);
-void	ra(t_group *a);
-void	rb(t_group *b);
-void	rr(t_group *a, t_group *b);
-void	rra(t_group *a);
-void	rrb(t_group *b);
-void	rrr(t_group *a, t_group *b);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void	pa(t_data *data);
+void	pb(t_data *data);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
 void	swap(t_group *group);
 void	rotate(t_group *group);
 void	push_to_other(t_group *a, t_group *b);
