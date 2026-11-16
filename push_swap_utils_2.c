@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/10 14:59:12 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/16 15:18:55 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/16 16:04:56 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	index_for_sorting(t_group *group)
 	t_node *curr;
 	t_node *unindext;
 
-	index = 0;
 	if (!group)
 		return ;
 	curr = group->top;
 	while (curr)
 	{
+		index = 0;
 		unindext = group->top;
 		while (unindext)
 		{
