@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/16 17:45:19 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:10:43 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_data
 }	t_data;
 
 
-t_data	selection_sort(t_data data);
+void	selection_sort(t_data *data);
 void	index_for_sorting(t_group *group);
 int		sorted(t_group *group);
 void	print_group(t_group *group);

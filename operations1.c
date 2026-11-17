@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/10 14:56:09 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/16 17:59:25 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:13:13 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sb(t_data *data)
 
 void	ss(t_data *data)
 {
-	if (data->a.size < 2 || data->b.size < 2)
+	if (data->a.size < 2 && data->b.size < 2)
 		return ;
 	swap(&data->a);
 	swap(&data->b);

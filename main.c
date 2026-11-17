@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/16 16:53:47 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:04:33 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char *argv[])
 	ft_printf("sorted 1=y 0=n: %d\n", sorted(&data.a));
 
 	index_for_sorting(&data.a);
-	selection_sort(data);
+	selection_sort(&data);
 	// po sabjkty nam nado vivodit infy ob oshike i disorder i td v stdrr
 	// toest, nyjno izmenit ft_printf 
 

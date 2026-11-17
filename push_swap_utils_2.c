@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/10 14:59:12 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/16 16:04:56 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/17 15:09:47 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ int	sorted(t_group *group)
 {
 	t_node	*curr;
 
-	if (!group || !group->top)
+	if (!group && !group->top)
 		return (1);
 	curr = group->top;
-	while (curr != NULL || curr->next)
+	while (curr != NULL && curr->next)
 	{
 		if (curr->data > curr->next->data)
 			return (0);
