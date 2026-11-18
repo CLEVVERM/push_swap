@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/17 15:10:43 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/18 18:22:48 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_group
 
 typedef struct s_data
 {
+	
 	t_group	a;
 	t_group	b;
 	double	disorder;
@@ -55,7 +56,12 @@ typedef struct s_data
 	int		bench;
 }	t_data;
 
-
+void	sort_three(t_data *data);
+void	ss_sort(t_data *data);
+void	radix_sort(t_data *data);
+void	manager_of_strategy(t_data *data);
+void	sort_b(t_data *data);
+void	bucket_sort(t_data *data);
 void	selection_sort(t_data *data);
 void	index_for_sorting(t_group *group);
 int		sorted(t_group *group);

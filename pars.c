@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:15 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/13 13:44:59 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/18 18:32:20 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,11 @@ int	pars(int argc, char *argv[], t_data *data)
 			if (compere_flags(argv[c], data) == 0)
 				return (0);
 		}
-		else
-			if (add_num(argv[c], data) == 0)
-				return (0);
-		c++;
+		if (argv[c][0] != '-')
+			data->strategy = 0;
+		if (add_num(argv[c], data) == 0)
+			return (0);
+		c++;	
 	}
 	if (check_duplicates(&data->a) == 1)
 		return (0);
