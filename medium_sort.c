@@ -6,48 +6,66 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/17 15:27:59 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/17 18:06:00 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/17 19:12:46 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void push(t_data *data)
+void	bucket_sort(t_data *data)
 {
-	int higest;
-	int lowest;
-	int midle;
-	int top;
-	int size;
+	int	min;
+	int	max;
+	int	counter;
+	int	finish;
 
-	lowest = 0
-	while (data->size.)
-}
-
-
-
-
-static int range_for_chunk(t_group *group, int highest, int lowest)
-{
-	t_node *curr;
-
-	curr = group->top;
-	while (curr != NULL)
+	finish = data->a.size;
+	min = 0;
+	max = 9;
+	counter = 0;
+	while(data->a.top != NULL)
 	{
-		if (curr->index >= lowest || curr->index <= highest)
-			return (1);
-		else	
-			return (0);
+		if (data->a.top->index >= min && data->a.top->index <= max)
+		{
+			pb(data);
+			counter++;
+		}
+
+		if (counter > max)
+		{
+			min = min + 10;
+			max = max + 10;
+		}
+		else
+			ra(data);
 	}
 }
-
-void chunk_sort(t_data *data)
+void	sort_b(t_data *data)
 {
-	int index;
-	
-	index = 0;
-	while (data->a.top !=NULL)
+	int	max;
+	int	step;
+	t_node *curr;
+
+	step = 0;
+	max = data->b.size - 1;
+	curr = data->b.top;
+	while(data->b.top != NULL)
 	{
-		
+		if (curr->index == max)
+		{
+			while (data->b.top->index != max)
+				rb(data);
+			pa(data);
+			max--;
+			while(step-- -1)
+				rrb(data);
+		}
+		step = 0;
+		curr = data->b.top;
+		while (curr->index != max)
+		{
+			curr = curr->next;
+			step++;
+		}
 	}
 }
