@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/18 18:00:14 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/19 14:14:56 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/19 18:04:31 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,61 @@
 
 void	sort_three(t_data *data)
 {
-	if (data->a.top->index == 1)
+	t_node *curr;
+	int max;
+
+	max = 0;
+	curr = data->a.top;
+	while (curr != NULL)
 	{
+		if (curr->index > max)
+			max = curr->index;
+		curr= curr->next;
+	}
+	if (data->a.top->index == max)
 		ra(data);
-		sa(data);
+	else if(data->a.top->next->index == max) 
 		rra(data);
-	}
-	else if (data->a.bottom->index == 1)
-	{		
-	if (data->a.top->index == 3)
-		{
-			ra(data);
-			ra(data);
-		}
-		else
-		{	
-			sa(data);
-			ra(data);
-			ra(data);
-		}
-	}
-	else
+	if (data->a.top->index > data->a.top->next->index)
+		sa(data);
+}
+
+
+static int	find_pos(t_group *group, int index)
+{
+	int		pos;
+	t_node	*curr;
+
+	curr = group->top;
+	pos = 0;
+	while (curr != 0 && curr->index != index)
 	{
-		if (data->a.top->index == 3)
-		{
-			rra(data);
-			sa(data);
-			rra(data);
-		}
-		else
-		{
-			rra(data);
-			rra(data);
-		}
+		curr = curr->next;
+		pos++;
 	}
+	return (pos);
+}
+
+
+void	sort_four_five(t_data *data)
+{
+	int index_to_find;
+	int pos;
+
+	index_to_find = 0;
+	while (data->a.size > 2)
+	{
+		pos = find_pos(&data->a, index_to_find);
+		while (data->a.top->index != index_to_find)
+		{
+			if (pos <= data->a.size / 2)
+				ra(data);
+			else
+				rra(data);
+		}
+		pb(data);
+		index_to_find++;
+	}
+	if (data->a.top->index > data->a.top->next->index)
+		sa(data);
 }
