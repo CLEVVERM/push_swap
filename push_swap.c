@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/12 17:57:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/18 18:29:05 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/19 14:14:46 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,40 +40,3 @@ void	manager_of_strategy(t_data *data)
 
 
 
-void	sort_three(t_data *data)
-{
-	if (data->a.top->index == 1)
-	{
-		ra(data);
-		sa(data);
-		rra(data);
-	}
-	else if (data->a.bottom->index == 1)
-	{		
-	if (data->a.top->index == 3)
-		{
-			ra(data);
-			ra(data);
-		}
-		else
-		{	
-			sa(data);
-			ra(data);
-			ra(data);
-		}
-	}
-	else
-	{
-		if (data->a.top->index == 3)
-		{
-			rra(data);
-			sa(data);
-			rra(data);
-		}
-		else
-		{
-			rra(data);
-			rra(data);
-		}
-	}
-}
