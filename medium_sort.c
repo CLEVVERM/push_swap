@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/17 15:27:59 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/18 16:43:03 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/19 14:36:23 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	sort_b(t_data *data)
 	int	step;
 	t_node *curr;
 
-	max = data->b.size - 1;
-	curr = data->b.top;
 	while(data->b.top != NULL)
 	{
+		max = data->b.size - 1;
+		curr = data->b.top;
 		step = 0;
 		while (curr->index != max)
 		{
@@ -35,6 +35,7 @@ void	sort_b(t_data *data)
 			else
 				rb(data);
 		}
+		pa(data);
 	}
 }
 
@@ -62,10 +63,8 @@ void	bucket_sort(t_data *data)
 				rb(data);	
 			}
 			else
-			{
 				pb(data);
-				counter++;
-			}
+			counter++;
 			if (counter > max)
 			{
 				min = min + size;

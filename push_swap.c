@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/12 17:57:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/19 14:14:46 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/19 14:26:29 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void adaptive_sort(t_data *data)
 		sa(data);
 	// else if (data->disorder <= 0.2 && data->disorder != 0)
 	// 	ss_sort(data);
-	else if (0.2 <= data->disorder <= 0.5)
+	else if (0.2 <= data->disorder && data->disorder <= 0.5)
 		bucket_sort(data);
 	// else if (data->disorder >= 0.5)
 	// 	 radix_sort(data);
