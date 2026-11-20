@@ -6,12 +6,20 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/18 18:35:06 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/20 15:55:28 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+static	void	sorted_message(t_data *data)
+{
+	if(sorted(&data->a))
+		ft_printf("stack is sorted\n");
+	else
+		ft_printf("stack is not sorted\n");
+}
 
 void	print_group(t_group *group)
 {
@@ -42,26 +50,21 @@ int	main(int argc, char *argv[])
 	ft_printf("strategy:%d\n", data.strategy);
 	print_group(&data.a);
 	print_group(&data.b);
-	ft_printf("sorted 1=y 0=n: %d\n", sorted(&data.a));
-
+	sorted_message(&data);
 	index_for_sorting(&data.a);
 	data.disorder = better_dissorder(&data.a);
 	printf("disorder: %f\n", data.disorder);
 	manager_of_strategy(&data);
 	// po sabjkty nam nado vivodit infy ob oshike i disorder i td v stdrr
 	// toest, nyjno izmenit ft_printf 
-
-
-	//ЗАПУСКАТЬ ТАК: СНАЧАЛА make,  ПОТОМ  ./push_swap 2 34 5 77 6 
-	ft_printf("sorted 1=y 0=n: %d\n", sorted(&data.a));
-
-
-	
+	sorted_message(&data);
+	data.disorder = better_dissorder(&data.a);
+	printf("disorder: %f\n", data.disorder);
+	//ЗАПУСКАТЬ ТАК: СНАЧАЛА make,  ПОТОМ  ./push_swap 2 34 5 77 6
 	free_group(&data.a);
 	free_group(&data.b);
 	return(1);
 }
-
 
 //Elsi vdrug zahotim cherez random chsila testitj.
 

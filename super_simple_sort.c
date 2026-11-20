@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/18 18:00:14 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/19 18:04:31 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/20 15:48:48 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ void	sort_three(t_data *data)
 		ra(data);
 	else if(data->a.top->next->index == max) 
 		rra(data);
-	if (data->a.top->index > data->a.top->next->index)
+	if (data->a.top->index > data->a.top->next->index && data->a.bottom->index == max)
 		sa(data);
 }
-
 
 static int	find_pos(t_group *group, int index)
 {
@@ -71,4 +70,6 @@ void	sort_four_five(t_data *data)
 	}
 	if (data->a.top->index > data->a.top->next->index)
 		sa(data);
+	while (data->b.size != 0)
+		pa(data);
 }
