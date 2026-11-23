@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/19 17:29:16 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/23 14:12:56 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ typedef struct s_data
 	int		bench;
 }	t_data;
 
+
+void	free_split(char **split);
 void	sort_four_five(t_data *data);
 void	sort_three(t_data *data);
 void	ss_sort(t_data *data);

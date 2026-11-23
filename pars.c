@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:15 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/19 15:08:33 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/23 14:13:44 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,43 @@ int	compere_flags(char *flag, t_data *data)
 	return (1);
 }
 
+void	free_split(char **split)
+{
+	int	c;
+
+	if (!split)
+		return ;
+	c = 0;
+	while (split[c] != NULL)
+	{
+		free(split[c]);
+		c++;
+	}
+	free(split);
+}
+
 int	add_num(char *str, t_data *data)
 {
-	int		num;
+	char	**split;
 	t_node	*node;
+	int		num;
+	int		c;
 
-	if (str_to_num(&num, str) == 0)
+	split = ft_split(str, ' ');
+	if (!split)
 		return (0);
-	node = new_one(num);
-	if (!node)
-		return (0);
-	add_bottom(&data->a, node);
-	return (1);
+	c = 0;
+	while (split[c] != NULL && str_to_num(&num, split[c]))
+	{
+		node = new_one(num);
+		if (!node)
+			break ;
+		add_bottom(&data->a, node);
+		c++;
+	}
+	c = (c > 0 && split[c] == NULL);
+	free_split(split);
+	return (c);
 }
 
 int	pars(int argc, char *argv[], t_data *data)

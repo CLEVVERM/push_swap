@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/17 15:27:59 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/19 14:36:23 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/23 14:14:13 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	bucket_sort(t_data *data)
 	}
 	sort_b(data);
 }
-
 
 
 

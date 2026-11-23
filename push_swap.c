@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/12 17:57:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/20 16:45:27 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/23 14:17:11 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ void	manager_of_strategy(t_data *data)
 	else if (data->strategy == 0)
 		adaptive_sort(data);
 }
-
 
 
