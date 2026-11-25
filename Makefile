@@ -6,7 +6,7 @@
 #    By: msotnych <msotnych@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/10/23 17:33:59 by msotnych      #+#    #+#                  #
-#    Updated: 2026/11/23 14:15:12 by msotnych      ########   odam.nl          #
+#    Updated: 2026/11/25 17:46:18 by msotnych      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ RM = rm -f
 FT_PRINTF = ft_printf/libftprintf.a
 LIBFT = Libft/libft.a
 SRC = push_swap.c push_swap_utils_1.c push_swap_utils_2.c main.c better_disorder.c operations1.c \
-		operations2.c operations3.c pars.c simple_sort.c medium_sort.c complex_sort.c super_simple_sort.c\
-
+		operations2.c operations3.c pars.c simple_sort.c medium_sort.c complex_sort.c super_simple_sort.c \
+		superpuper_simple_sort.c bench.c \
 
 		
 OBJ = $(SRC:.c=.o)

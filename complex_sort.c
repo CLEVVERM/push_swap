@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/18 17:38:38 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/25 13:48:47 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/25 14:25:11 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,9 @@ void	radix_sort(t_data *data)
 		while (i < amount) 
 		{
 			if (data->a.top->index >> passed & 1) 
-			{
 				ra(data);
-			} 
 			else 
-			{
 				pb(data);
-			}
 			i++;
 		}
 		while (data->b.size > 0)

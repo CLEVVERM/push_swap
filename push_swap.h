@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/23 14:12:56 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/25 17:46:04 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_group
 
 typedef struct s_data
 {
-	
+	char *hardnes;
 	t_group	a;
 	t_group	b;
 	double	disorder;
@@ -56,7 +56,7 @@ typedef struct s_data
 	int		bench;
 }	t_data;
 
-
+void print_bench(t_data *data);
 void	free_split(char **split);
 void	sort_four_five(t_data *data);
 void	sort_three(t_data *data);
