@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/25 16:25:40 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/25 17:45:28 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/25 18:12:01 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ static void print_disorder(t_data *data)
 {
 	int first2digit;
 	int last2digit;
-	int intDisorder;
+	int int_disorder;
 	
-	intDisorder = data->disorder * 10000;
-	first2digit = intDisorder / 100;
-	last2digit = intDisorder % 100;
+	int_disorder = data->disorder * 10000;
+	first2digit = int_disorder / 100;
+	last2digit = int_disorder % 100;
 	ft_putstr_fd("disorder: ", 2);
 	ft_putnbr_fd(first2digit, 2);
 	ft_putchar_fd('.', 2);
+	ft_putnbr_fd(0, 2);
 	ft_putnbr_fd(last2digit, 2);
+	ft_putchar_fd('%', 2);
 	ft_putchar_fd('\n', 2);
 }
 
@@ -35,6 +37,7 @@ static void print_strategy(t_data *data)
 		ft_putstr_fd(data->hardnes, 2);
 	else 
 		ft_putstr_fd("sorted", 2);
+		ft_putchar_fd('\n', 2);
 }
 
 static void print_total_ops(t_data *data)
@@ -46,6 +49,7 @@ static void print_total_ops(t_data *data)
 	sum2 = sum + data->ra_c + data->rb_c + data->rr_c + data->rra_c + data->rrb_c + data->rrr_c;
 	ft_putstr_fd("total_ops: ", 2);
 	ft_putnbr_fd(sum2, 2);
+	ft_putchar_fd('\n', 2);
 }
 
 static void print_ops(t_data *data)
@@ -73,12 +77,13 @@ static void print_ops(t_data *data)
 	ft_putnbr_fd(data->rrb_c, 2);
 	ft_putstr_fd(" rrr: ", 2);
 	ft_putnbr_fd(data->rrr_c, 2);
+	ft_putchar_fd('\n', 2);
 }
 
 void print_bench(t_data *data)
 {
-	print_disorder(&data->disorder);
-	print_strategy(data->hardnes);
+	print_disorder(data);
+	print_strategy(data);
 	print_total_ops(data);
 	print_ops(data);
 }
