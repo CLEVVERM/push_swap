@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:15 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/23 14:13:44 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/25 13:56:20 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,6 @@ int	compere_flags(char *flag, t_data *data)
 	else
 		return (0);
 	return (1);
-}
-
-void	free_split(char **split)
-{
-	int	c;
-
-	if (!split)
-		return ;
-	c = 0;
-	while (split[c] != NULL)
-	{
-		free(split[c]);
-		c++;
-	}
-	free(split);
 }
 
 int	add_num(char *str, t_data *data)

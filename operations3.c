@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/11 15:37:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/17 15:13:40 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/25 13:56:56 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,19 @@ void	rrr(t_data *data)
 	rrotate(&data->b);
 	data->rrr_c++;
 	write(1, "rrr\n", 4);
+}
+
+void	free_split(char **split)
+{
+	int	c;
+
+	if (!split)
+		return ;
+	c = 0;
+	while (split[c] != NULL)
+	{
+		free(split[c]);
+		c++;
+	}
+	free(split);
 }

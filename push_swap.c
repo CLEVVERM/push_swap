@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/12 17:57:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/24 15:16:34 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/25 13:50:37 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void adaptive_sort(t_data *data)
 			bucket_sort(data);
 	else if (data->disorder >= 0.5)
 		 radix_sort(data);
+	else
+		radix_sort(data);
 }
 
 void	manager_of_strategy(t_data *data)
