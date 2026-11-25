@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/12 17:57:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/23 17:58:41 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/24 15:16:34 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void adaptive_sort(t_data *data)
 {
 	if (data->a.size == 3 && data->disorder != 0)
 		sort_three(data);
-	if ((data->a.size == 4 || data->a.size == 5) && data->disorder != 0)
+	else if ((data->a.size == 4 || data->a.size == 5) && data->disorder != 0)
 		sort_four_five(data);
 	else if (data->a.size == 2 && data->disorder != 0)
 		sa(data);
