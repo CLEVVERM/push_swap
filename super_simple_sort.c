@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/18 18:00:14 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/23 14:12:15 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/26 18:07:16 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	sort_three(t_data *data)
 {
-	t_node *curr;
-	int max;
+	t_node	*curr;
+	int		max;
 
 	max = 0;
 	curr = data->a.top;
@@ -23,13 +23,14 @@ void	sort_three(t_data *data)
 	{
 		if (curr->index > max)
 			max = curr->index;
-		curr= curr->next;
+		curr = curr->next;
 	}
 	if (data->a.top->index == max)
 		ra(data);
-	else if(data->a.top->next->index == max) 
+	else if (data->a.top->next->index == max)
 		rra(data);
-	if (data->a.top->index > data->a.top->next->index && data->a.bottom->index == max)
+	if (data->a.top->index > data->a.top->next->index
+		&& data->a.bottom->index == max)
 		sa(data);
 }
 
@@ -48,11 +49,10 @@ static int	find_pos(t_group *group, int index)
 	return (pos);
 }
 
-
 void	sort_four_five(t_data *data)
 {
-	int index_to_find;
-	int pos;
+	int	index_to_find;
+	int	pos;
 
 	index_to_find = 0;
 	while (data->a.size > 2)

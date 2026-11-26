@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/11 15:37:28 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/17 15:13:29 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/26 17:50:32 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rb(t_data *data)
 
 void	rr(t_data *data)
 {
-	if ( data->a.size < 2 && data->b.size < 2)
+	if (data->a.size < 2 && data->b.size < 2)
 		return ;
 	rotate(&data->a);
 	rotate(&data->b);

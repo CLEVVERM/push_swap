@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/17 15:27:59 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/23 14:14:13 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/26 18:01:45 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	sort_b(t_data *data)
 {
-	int	max;
-	int	step;
-	t_node *curr;
+	int		max;
+	int		step;
+	t_node	*curr;
 
-	while(data->b.top != NULL)
+	while (data->b.top != NULL)
 	{
 		max = data->b.size - 1;
 		curr = data->b.top;
@@ -30,7 +30,7 @@ void	sort_b(t_data *data)
 		}
 		while (data->b.top->index != max)
 		{
-			if (step >= data->b.size/2)
+			if (step >= data->b.size / 2)
 				rrb(data);
 			else
 				rb(data);
@@ -49,18 +49,18 @@ void	bucket_sort(t_data *data)
 	counter = 0;
 	if (data->a.size <= 100)
 		size = 10;
-	else 
+	else
 		size = 50;
 	min = 0;
 	max = size - 1;
-	while(data->a.top != NULL)
+	while (data->a.top != NULL)
 	{
 		if (data->a.top->index >= min && data->a.top->index <= max)
 		{
-			if(min + size/ 2 > data->a.top->index)
+			if (min + size / 2 > data->a.top->index)
 			{
 				pb(data);
-				rb(data);	
+				rb(data);
 			}
 			else
 				pb(data);
@@ -76,7 +76,3 @@ void	bucket_sort(t_data *data)
 	}
 	sort_b(data);
 }
-
-
-
-

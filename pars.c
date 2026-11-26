@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/03 14:36:15 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/25 13:56:20 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/26 17:51:00 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int	pars(int argc, char *argv[], t_data *data)
 		}
 		else if (add_num(argv[c], data) == 0)
 			return (0);
-		c++;	
+		c++;
 	}
 	if (check_duplicates(&data->a) == 1)
 		return (0);
