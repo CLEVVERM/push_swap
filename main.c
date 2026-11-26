@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/23 14:14:39 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/26 15:43:14 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	main(int argc, char *argv[])
 	// po sabjkty nam nado vivodit infy ob oshike i disorder i td v stdrr
 	// toest, nyjno izmenit ft_printf 
 	sorted_message(&data);
-	data.disorder = better_dissorder(&data.a);
-	printf("disorder: %f\n", data.disorder);
+	if (data.bench)
+		print_bench(&data);
 	//ЗАПУСКАТЬ ТАК: СНАЧАЛА make,  ПОТОМ  ./push_swap 2 34 5 77 6
 	free_group(&data.a);
 	free_group(&data.b);

@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/12 17:57:53 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/25 16:44:53 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/26 15:48:40 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,19 @@ static void adaptive_sort(t_data *data)
 	}	
 }
 
+static void	hardnes_for_bench(t_data *data)
+{
+	if (data->strategy == 1)
+		data->hardnes = "simple / O(n²)";
+	else if (data->strategy == 2)
+		data->hardnes = "medium / O(n√n)";
+	else if (data->strategy == 3)
+		data->hardnes = "complex / O(n log n)";
+}
+
 void	manager_of_strategy(t_data *data)
 {
+	hardnes_for_bench(data);
 	if (data->strategy == 1)
 		selection_sort(data);
 	else if (data->strategy == 2)
@@ -55,13 +66,3 @@ void	manager_of_strategy(t_data *data)
 		adaptive_sort(data);
 }
 
-void	hardnes_for_bench(t_data *data)
-{
-	if (data->strategy == 1)
-		data->hardnes = "simple / O(n²)";
-	else if (data->strategy == 2)
-		data->hardnes = "medium / O(n√n)";
-	else if (data->strategy == 3)
-		data->hardnes = "complex / O(n log n)";
-	
-}
