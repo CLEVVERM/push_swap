@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/27 16:14:55 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/27 18:19:50 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (pars(argc, argv, &data) == 0)
 		free_both(&data.a, &data.b);
-	ft_printf("size: %d\n", data.a.size);
-	ft_printf("strategy:%d\n", data.strategy);
 	index_for_sorting(&data.a);
 	data.disorder = better_dissorder(&data.a);
 	manager_of_strategy(&data);
@@ -55,7 +53,7 @@ int	main(int argc, char *argv[])
 		print_bench(&data);
 	free_group(&data.a);
 	free_group(&data.b);
-	return(1);
+	return(0);
 }
 
 //Elsi vdrug zahotim cherez random chsila testitj.
