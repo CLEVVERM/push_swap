@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by msotnych, mmolotko.*
+*This project has been created as part of the 42 curriculum by mmolotko, msotnych.*
 
 # push_swap
 
@@ -311,8 +311,8 @@ Average number of operations on random inputs:
 
 | Login | Work |
 |---|---|
-| msotnych | project structure, header, parsing, indexing, `--bench`, Makefile, adaptive strategy|
 | mmolotko | the operations, the disorder function, the sorting algorithms|
+| msotnych | project structure, header, parsing, indexing, `--bench`, Makefile, adaptive strategy|
 
 ## Resources
 
