@@ -6,7 +6,7 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/25 16:25:40 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/26 18:13:04 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/27 13:32:42 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	print_disorder(t_data *data)
 	ft_putstr_fd("disorder: ", 2);
 	ft_putnbr_fd(first2digit, 2);
 	ft_putchar_fd('.', 2);
+	if (last2digit < 10)
+		ft_putnbr_fd(0, 2);
 	ft_putnbr_fd(last2digit, 2);
 	ft_putchar_fd('%', 2);
 	ft_putchar_fd('\n', 2);
@@ -36,7 +38,7 @@ static void	print_strategy(t_data *data)
 		ft_putstr_fd(data->hardnes, 2);
 	else
 		ft_putstr_fd("sorted", 2);
-	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2); 
 }
 
 static void	print_total_ops(t_data *data)

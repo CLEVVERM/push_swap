@@ -6,35 +6,35 @@
 /*   By: msotnych <msotnych@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/11/09 16:57:02 by msotnych      #+#    #+#                 */
-/*   Updated: 2026/11/26 15:43:14 by msotnych      ########   odam.nl         */
+/*   Updated: 2026/11/27 16:14:55 by msotnych      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static	void	sorted_message(t_data *data)
-{
-	if(sorted(&data->a))
-		ft_printf("stack is sorted\n");
-	else
-		ft_printf("stack is not sorted\n");
-}
+// static	void	sorted_message(t_data *data)
+// {
+// 	if(sorted(&data->a))
+// 		ft_printf("stack is sorted\n");
+// 	else
+// 		ft_printf("stack is not sorted\n");
+// }
 
-void	print_group(t_group *group)
-{
-	t_node	*curr;
+// void	print_group(t_group *group)
+// {
+// 	t_node	*curr;
 
-	if (!group || group == NULL)
-		return ;
-	curr = group->top;
-	while (curr != NULL)
-	{
-		ft_printf("%d ", curr->data);
-		curr = curr->next;
-	}
-	ft_printf("%c", '\n');
-}
+// 	if (!group || group == NULL)
+// 		return ;
+// 	curr = group->top;
+// 	while (curr != NULL)
+// 	{
+// 		ft_printf("%d ", curr->data);
+// 		curr = curr->next;
+// 	}
+// 	ft_printf("%c", '\n');
+// }
 
 int	main(int argc, char *argv[])
 {
@@ -48,19 +48,11 @@ int	main(int argc, char *argv[])
 		free_both(&data.a, &data.b);
 	ft_printf("size: %d\n", data.a.size);
 	ft_printf("strategy:%d\n", data.strategy);
-	print_group(&data.a);
-	print_group(&data.b);
-	sorted_message(&data);
 	index_for_sorting(&data.a);
 	data.disorder = better_dissorder(&data.a);
-	printf("disorder: %f\n", data.disorder);
 	manager_of_strategy(&data);
-	// po sabjkty nam nado vivodit infy ob oshike i disorder i td v stdrr
-	// toest, nyjno izmenit ft_printf 
-	sorted_message(&data);
 	if (data.bench)
 		print_bench(&data);
-	//ЗАПУСКАТЬ ТАК: СНАЧАЛА make,  ПОТОМ  ./push_swap 2 34 5 77 6
 	free_group(&data.a);
 	free_group(&data.b);
 	return(1);
